@@ -1,6 +1,6 @@
 resource "aws_security_group" "alb-security-group-web" {
   name        = var.alb-sg-web-name
-  description = "ALB Security Group"
+  description = "Web tier ALB Security Group"
   vpc_id      = aws_vpc.vpc.id
   ingress {
     description = "HTTP from Internet"
