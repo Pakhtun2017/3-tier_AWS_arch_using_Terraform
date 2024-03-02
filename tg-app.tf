@@ -10,7 +10,7 @@ resource "aws_lb_target_group" "target-group-app" {
   }
 }
 
-resource "aws_lb_listener" "alb-listener-app" {
+resource "aws_lb_listener" "alb_listener-app" {
   load_balancer_arn = aws_lb.alb-app.arn
   port              = "80"
   protocol          = "HTTP"

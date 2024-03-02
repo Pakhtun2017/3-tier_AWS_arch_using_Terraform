@@ -4,11 +4,11 @@ resource "aws_security_group" "alb-security-group-app" {
   vpc_id      = aws_vpc.vpc.id
 
   ingress {
-    description     = "HTTP from Web tier's ASG Security Group"
+    description     = "HTTP from Web tier ASG Security Group"
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = [aws_security_group.asg-security-group-web.ids]
+    security_groups = [aws_security_group.asg-security-group-web.id]
   }
 
   egress {

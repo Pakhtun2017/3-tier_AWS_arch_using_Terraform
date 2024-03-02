@@ -1,8 +1,9 @@
-resource "aws_security_group" "asg-security-group" {
+resource "aws_security_group" "asg-security-group-web" {
   name        = var.asg-sg-web-name
   description = "ASG Security Group"
   vpc_id      = aws_vpc.vpc.id
-  ingress = {
+
+  ingress {
     description     = "HTTP from ALB"
     from_port       = 80
     to_port         = 80
@@ -15,14 +16,14 @@ resource "aws_security_group" "asg-security-group" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = "0.0.0.0/0"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
-  egress = {
+  egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = "0.0.0.0/0"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = {

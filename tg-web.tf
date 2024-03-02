@@ -10,7 +10,7 @@ resource "aws_lb_target_group" "target-group-web" {
 }
 
 resource "aws_lb_listener" "alb-listener-web" {
-  load_balancer_arn = aws_ls.alb-web.arn
+  load_balancer_arn = aws_lb.alb-web.arn
   port              = "80"
   protocol          = "HTTP"
   default_action {

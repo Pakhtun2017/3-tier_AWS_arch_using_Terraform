@@ -10,6 +10,14 @@ variable "vpc-name" {
   description = "Name for Virtual Private Cloud"
 }
 
+variable "igw-name" {
+  description = "Name for Internet Gateway"
+}
+
+variable "nat-gw-name" {
+  description = "Name for NAT Gateway"
+}
+
 variable "web-subnet1-cidr" {
   description = "CIDR Block for Web-tier Subnet-1"
 }
@@ -64,14 +72,6 @@ variable "az-1" {
 
 variable "az-2" {
   description = "Availabity Zone 2"
-}
-
-variable "igw-name" {
-  description = "Name for Internet Gateway"
-}
-
-variable "nat-gw-name" {
-  description = "Name for NAT Gateway"
 }
 
 variable "public-rt-name" {
@@ -134,19 +134,46 @@ variable "alb-app-name" {
   description = "Name of the Load Balancer for the App Tier"
 }
 
-variable "tg-app-name" {
-  description = "Name for Target group app"
+variable "alb-sg-app-name" {
+  description = "Name for App tier ALB security group"
 }
 
 variable "asg-app-name" {
   description = "Name the Auto Scaling group in app Tier"
 }
 
-variable "alb-sg-app-name" {
-  description = "Name for App tier ALB security group"
-}
-
 variable "asg-sg-app-name" {
   description = "Name for App tier ASG Security Group"
 }
 
+variable "tg-app-name" {
+  description = "Name for Target group app"
+}
+
+variable "db-username" {
+  description = "Username for db instance"
+}
+
+variable "db-password" {
+  description = "Password for db instance"
+}
+
+variable "db-name" {
+  description = "Name of the DB"
+}
+
+variable "instance-class" {
+  description = "Value for DB instance class"
+}
+
+variable "db-sg-name" {
+  description = "Name of DB Security Group"
+}
+
+variable "db-subnet-grp-name" {
+  description = "Name of the DB Subnet Group"
+}
+
+variable "app-db-sg-name" {
+  description = "Name for App-DB Security group"
+}

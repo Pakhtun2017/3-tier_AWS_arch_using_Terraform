@@ -2,6 +2,7 @@ resource "aws_security_group" "alb-security-group-web" {
   name        = var.alb-sg-web-name
   description = "Web tier ALB Security Group"
   vpc_id      = aws_vpc.vpc.id
+
   ingress {
     description = "HTTP from Internet"
     from_port   = 80
@@ -9,12 +10,14 @@ resource "aws_security_group" "alb-security-group-web" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  egress = {
+  
+  egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  
   tags = {
     Name = var.alb-sg-web-name
   }

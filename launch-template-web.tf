@@ -9,10 +9,11 @@ resource "aws_launch_template" "template-web" {
     security_groups = [aws_security_group.asg-security-group-web.id]
   }
 
-  user_data = filebase64("user-date.sh")
+  user_data = filebase64("user-data.sh")
 
   tag_specifications {
     resource_type = "instance"
+    
     tags = {
       Name = var.web-instance-name
     }
